@@ -28,18 +28,6 @@ def rename_columns(df):
     return df
 
 
-def check_duplicates(df):
-    duplicated_id = df.duplicated(subset=["Customer ID"]).sum()
-    print(f"Number of duplicated IDs: {duplicated_id}")
-    return df
-
-
-def check_missing_values(df):
-    null_value = df.isnull().sum()
-    print(f"Missing values in each column:\n{null_value}")
-    return df
-
-
 def merge_senior_dependents(df):
     df["Senior Citizen"] = df["Senior Citizen"].replace({1: "Yes", 0: "No"})
     df["Senior Citizen & Dependents"] = df["Senior Citizen"] + "_" + df["Dependents"]
@@ -94,8 +82,6 @@ def drop_irrelevant_columns(df):
 # Function to preprocess data
 def preprocess_data(df):
     df = rename_columns(df)
-    df = check_duplicates(df)
-    df = check_missing_values(df)
     df = merge_senior_dependents(df)
     df = merge_services(df)
     df = drop_irrelevant_columns(df)
@@ -107,6 +93,14 @@ if __name__ == "__main__":
     # Load the data using the function from load_data.py
     file_path = "../data/Telco Customer Churn.csv"
     df = read_csv_data(file_path)
+
+    # Display number of duplicated data
+    duplicated_id = df.duplicated(subset=["customerID"]).sum()
+    print(f"Number of duplicated IDs: {duplicated_id}")
+
+    # Display missing values in each columns
+    null_value = df.isnull().sum()
+    print(f"Missing values in each column:\n{null_value}")
 
     # Preprocess the data
     df = preprocess_data(df)
