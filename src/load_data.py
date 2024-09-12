@@ -19,7 +19,7 @@ def read_csv_data(file_path):
 
 if __name__ == "__main__":
     # Define the path to the dataset
-    file_path = "data/Telco Customer Churn.csv"
+    file_path = "../data/Telco Customer Churn.csv"
 
     # Load the data
     df = read_csv_data(file_path)
