@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
+import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
@@ -70,6 +71,11 @@ def main():
     # Create and train the model
     model = LogisticRegression()
     model.fit(X_train_resampled, y_train_resampled)
+
+    # Save the model to a file
+    os.makedirs("../results/model", exist_ok=True)
+    model_filename = "../results/model/logistic_regression_model.joblib"
+    joblib.dump(model, model_filename)
 
     # Transform test data using preprocessor fitted on training data
     X_test_prep = preprocessor.transform(X_test)
