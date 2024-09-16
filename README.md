@@ -43,7 +43,7 @@ To run the **Telecommunication Customer Churn Analysis** project, follow these s
 ### 1. Clone the Repository
 First, clone the repository to your local machine using the following command:
 ```bash
-git clone https://github.com/your-username/telecom-churn-analysis.git
+git clone https://github.com/m1racle31/Telecommunication-Customer-Churn-Analysis
 cd Telecommunication-Customer-Churn-Analysis
 ```
 
