@@ -72,7 +72,6 @@ This script will:
 - Load the pre-trained Logistic Regression model from `results/model/`.
 - Make predictions on the test data.
 - Evaluate the model’s performance by calculating accuracy, generating the confusion matrix, and displaying the classification report.
-- Output recommendations based on churn analysis in the `results/recommendation/` folder.
 
 ### 5. Additional Exploration with Notebooks (Optional)
 If you want to explore the data or run specific analyses interactively, you can use the Jupyter Notebooks provided in the `notebooks/` folder.
@@ -85,8 +84,8 @@ Open any `.ipynb` files from the `notebooks/` directory for further exploration 
 
 ### 6. Output and Recommendations
 Once the script completes:
-- Model evaluation outputs like the confusion matrix and classification report will be stored in the `results/evaluation/` folder.
-- The trained model will be saved in `results/model/`.
+- Model evaluation outputs such as the confusion matrix and classification report will be displayed.
+- The trained model will be saved in the results/model/ folder when running the prediction_model.py file.
 - You can create and save the recommendations for improving customer retention based on the churn analysis in `results/recommendation/`
 
 ## Code Explanation
